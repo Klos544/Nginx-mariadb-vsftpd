@@ -8,7 +8,7 @@ cat /etc/nginx/sites-enabled/default.bak1 | sed -e 62's/fastcgi_pass 127.0.0.1:9
 rm -rf /etc/nginx/sites-enabled/default
 rm -rf /etc/nginx/sites-enabled/default.bak1
 mv /etc/nginx/sites-enabled/default.bak /etc/nginx/sites-enabled/default
-sed -i 's/index index.html index.htm index.nginx-debian.html;/index index.php index.html index.htm index.nginx-debian.html;/' /etc/nginx/sites-enabled/default
+sed -i 's/index index.html index.htm index.nginx-debian.html;/index index.php index.html index.htm;/' /etc/nginx/sites-enabled/default
 systemctl restart nginx
 echo "<?php phpinfo(); ?>" > /var/www/html/index.php
 sed -i 's/listen=NO/listen=YES/' /etc/vsftpd.conf
